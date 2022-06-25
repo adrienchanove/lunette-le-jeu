@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterTouch : MonoBehaviour
+public class GameCore : MonoBehaviour
 {
+    public int score = 0;
+    public int objet = 0;
+    public int maxObjet = 3;
+    public GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +19,5 @@ public class MonsterTouch : MonoBehaviour
     void Update()
     {
         
-    }
-
-    // Collision detection
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Monster")
-        {
-            Debug.Log("Player touched Monster");
-        }
     }
 }

@@ -15,14 +15,10 @@ public class PlayerUi : MonoBehaviour
     [SerializeField]
     public GameObject startMenu;
 
-    private bool isPaused;
-    private bool inGame;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        isPaused = true;
 
         pauseMenu.SetActive(false);
         // gameOverMenu.SetActive(false);
@@ -44,9 +40,9 @@ public class PlayerUi : MonoBehaviour
         }
 
         // Show variables
-        Debug.Log("isPaused: " + isPaused);
-        Debug.Log("inGame: " + inGame);
-        Debug.Log("Time.timeScale: " + Time.timeScale);
+        // Debug.Log("isPaused: " + isPaused);
+        // Debug.Log("inGame: " + inGame);
+        // Debug.Log("Time.timeScale: " + Time.timeScale);
 
     }
     public void Pause()
@@ -54,12 +50,10 @@ public class PlayerUi : MonoBehaviour
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
-            isPaused = true;
         }
         else
         {
             Time.timeScale = 1;
-            isPaused = false;
         }
     }
 

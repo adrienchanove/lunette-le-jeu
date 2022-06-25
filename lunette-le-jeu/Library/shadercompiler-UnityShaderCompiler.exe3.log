@@ -138,3 +138,4 @@ Cmd: translateComputeKernel
   api=14 insize=1153 outsize=1299 ok=1
 Cmd: translateComputeKernel
   api=14 insize=11445 outsize=22657 ok=1
+Cmd: shutdown
