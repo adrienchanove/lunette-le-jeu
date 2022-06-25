@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameCore : MonoBehaviour
 {
-    public int score = 0;
+    // Nb objet trouvés
     public int objet = 0;
+    // Nb objet total
     public int maxObjet = 3;
-    public GameObject pauseMenu;
+    [SerializeField]
+    public GameObject gameOverMenu;
+    [SerializeField]
+    public GameObject winMenu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +25,17 @@ public class GameCore : MonoBehaviour
     {
         
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            // PERDUE
+            Debug.Log("Player touched Monster");
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+
 }

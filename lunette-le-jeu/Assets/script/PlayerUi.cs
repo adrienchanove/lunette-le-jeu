@@ -21,8 +21,8 @@ public class PlayerUi : MonoBehaviour
     {
 
         pauseMenu.SetActive(false);
-        // gameOverMenu.SetActive(false);
-        // winMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        winMenu.SetActive(false);
         startMenu.SetActive(true);
         Pause();
     }
@@ -78,5 +78,19 @@ public class PlayerUi : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
+
+    public void GameOver()
+    {
+        gameOverMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Win()
+    {
+        winMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    
 
 }
