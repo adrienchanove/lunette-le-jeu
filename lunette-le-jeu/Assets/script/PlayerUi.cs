@@ -14,6 +14,8 @@ public class PlayerUi : MonoBehaviour
     public GameObject winMenu;
     [SerializeField]
     public GameObject startMenu;
+    [SerializeField]
+    public GameObject rulesMenu;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class PlayerUi : MonoBehaviour
         gameOverMenu.SetActive(false);
         winMenu.SetActive(false);
         startMenu.SetActive(true);
+        rulesMenu.SetActive(false);
         Pause();
     }
 
@@ -89,6 +92,13 @@ public class PlayerUi : MonoBehaviour
     {
         winMenu.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void Rules()
+    {
+       // Hide startMenu and show rules menu
+        startMenu.SetActive(false);
+        rulesMenu.SetActive(true);
     }
 
     

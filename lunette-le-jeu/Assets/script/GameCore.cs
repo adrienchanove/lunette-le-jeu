@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameCore : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class GameCore : MonoBehaviour
         KeyCode.A 
     };
 
+    // Object du text affichant le score
+    public Text scoreText;
+
 
     [SerializeField]
     public GameObject gameOverMenu;
@@ -33,6 +37,7 @@ public class GameCore : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start ()
     {
+        scoreText.text = "0 / " + maxObjet;
         int konamiCodeIndex = 0;
 
         while (true)
@@ -62,26 +67,8 @@ public class GameCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*/ Konami code
-        //Debug.Log(Input.);
-         Event e = Event.current;
-        if (e.isKey){
-            Debug.Log("Detected key code: " + e.keyCode);
-            if (Input.GetKeyDown(konamiCode[konamiCodeIndex]))
-            {
-                //Debug.Log("Konami code: " + konamiCode[konamiCodeIndex]);
-                konamiCodeIndex++;
-            }
-            else
-            {
-                konamiCodeIndex = 0;
-            }
-            if (konamiCodeIndex == konamiCode.Length)
-            {
-                konami = true;
-                konamiCodeIndex = 0;
-            }
-        }*/
+        // Update texte
+        scoreText.text = objet + " / " + maxObjet;
         
     }
 
